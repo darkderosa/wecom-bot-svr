@@ -35,14 +35,12 @@ def main():
     logging.basicConfig(stream=sys.stdout)
     logging.getLogger().setLevel(logging.INFO)
 
-    token = 'xxx'  # 3个x
-    aes_key = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'  # 43个x
     corp_id = ''
     host = '0.0.0.0'
     port = 5001
     # 这里要跟机器人名字一样，用于切分群组聊天中的@消息
-    bot_name = 'jasonzxpan-test'
-    server = WecomBotServer(bot_name, host, port, path='/wecom_bot', token=token, aes_key=aes_key, corp_id=corp_id)
+    bot_name = 'DerBot'
+    server = WecomBotServer(bot_name, host, port, path='/wecom_bot', corp_id=corp_id)
 
     server.set_message_handler(msg_handler)
     server.set_event_handler(event_handler)
