@@ -37,7 +37,7 @@ def main():
 
     corp_id = ''
     host = '0.0.0.0'
-    port = 5001
+    port = 5364
     # 这里要跟机器人名字一样，用于切分群组聊天中的@消息
     bot_name = 'DerBot'
     server = WecomBotServer(bot_name, host, port, path='/wecom_bot', corp_id=corp_id)
