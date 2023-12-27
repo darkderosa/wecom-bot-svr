@@ -1,4 +1,5 @@
 import logging
+import os
 import sys
 
 from wecom_bot_svr import WecomBotServer, RspTextMsg, RspMarkdownMsg
@@ -41,7 +42,8 @@ def main():
     # 这里要跟机器人名字一样，用于切分群组聊天中的@消息
     bot_name = 'DerBot'
     server = WecomBotServer(bot_name, host, port, path='/wecom_bot', corp_id=corp_id)
-
+    print(os.getenv("WX_BOT_TOKEN"))
+    print(os.getenv("WX_BOT_AES_KEY"))
     server.set_message_handler(msg_handler)
     server.set_event_handler(event_handler)
     server.run()
